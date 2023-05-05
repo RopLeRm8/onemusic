@@ -1,4 +1,4 @@
-import { Box, Button, List, ListItem, Typography } from "@mui/material";
+import { Box, Button, Chip, List, ListItem, Typography } from "@mui/material";
 import { useContext } from "react";
 import stepsImg from "../assets/Landing/steps.png";
 import { MainContext } from "../providers/RouteProvider";
@@ -57,7 +57,6 @@ export default function LandingSecond() {
             fontSize: "80%",
             whiteSpace: "pre-line",
             width: { xs: "100%", md: "50%" },
-            mb: 1,
           }}
         >
           Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру
@@ -96,11 +95,23 @@ export default function LandingSecond() {
                 color: secondColor,
                 fontWeight: 700,
                 fontSize: "230%",
+                display: { xs: "none", md: "flex" },
               }}
             >
               среди
             </Typography>
           </Box>
+          <Typography
+            sx={{
+              fontFamily: font,
+              color: secondColor,
+              fontWeight: 700,
+              fontSize: "230%",
+              display: { xs: "flex", md: "none" },
+            }}
+          >
+            среди
+          </Typography>
           <Typography
             sx={{
               fontFamily: font,
@@ -191,7 +202,7 @@ export default function LandingSecond() {
             сгенерировать несколько абзацев более менее осмысленного
           </Typography>
         </Box>
-        <Box sx={{ display: "block" }}>
+        <Box sx={{ display: "block", mr: { xs: 3.5, md: 0 } }}>
           <Box
             sx={{
               background: "#222324",
@@ -248,7 +259,7 @@ export default function LandingSecond() {
             background: "transparent",
             border: `1px solid ${secondColor}`,
             borderRadius: "87px",
-            mb: 2.5,
+            mb: 1.5,
           }}
         >
           Приложение
@@ -272,11 +283,24 @@ export default function LandingSecond() {
                 color: secondColor,
                 fontWeight: 700,
                 fontSize: "230%",
+                display: { xs: "none", md: "flex" },
               }}
             >
               мобильное
             </Typography>
           </Box>
+          <Typography
+            sx={{
+              fontFamily: font,
+              color: secondColor,
+              fontWeight: 700,
+              fontSize: "230%",
+              mt: 0.5,
+              display: { xs: "flex", md: "none" },
+            }}
+          >
+            мобильное
+          </Typography>
           <Typography
             sx={{
               fontFamily: font,
@@ -291,11 +315,11 @@ export default function LandingSecond() {
         <Box
           sx={{
             background: "#222324",
-            minWidth: { xs: "90%", md: "100%" },
-            maxWidth: { xs: "90%", md: "100%" },
+            minWidth: "100%",
+            maxWidth: "100%",
             minHeight: "400px",
             borderRadius: "3px",
-            mb: 5,
+            mb: 10,
             display: { xs: "block", md: "flex" },
             justifyContent: { xs: "flex-start", md: "space-between" },
           }}
@@ -350,6 +374,186 @@ export default function LandingSecond() {
             }}
           >
             <img src={stepsImg} style={{ maxWidth: "100%" }} alt="" />
+          </Box>
+        </Box>
+        <Button
+          sx={{
+            fontFamily: font,
+            color: secondColor,
+            fontWeight: 500,
+            fontSize: "80%",
+            textTransform: "none",
+            px: 6,
+            py: 1,
+            background: "transparent",
+            border: `1px solid ${secondColor}`,
+            borderRadius: "87px",
+            mb: 2,
+          }}
+        >
+          HipHop x Rap
+        </Button>
+        <Typography
+          sx={{
+            fontFamily: font,
+            color: firstColor,
+            fontWeight: 700,
+            fontSize: "230%",
+            mb: 0.5,
+          }}
+        >
+          Топ исполнителей
+        </Typography>
+        <Typography
+          sx={{
+            fontFamily: font,
+            color: secondColor,
+            fontWeight: 600,
+            fontSize: "110%",
+          }}
+        >
+          Любимые артисты слушателей за последний месяц
+        </Typography>
+        <Typography
+          sx={{
+            fontFamily: font,
+            color: secondColor,
+            fontWeight: 500,
+            fontSize: "80%",
+            opacity: 0.5,
+            mb: 3,
+          }}
+        >
+          Статистика согласно количеству прослушиваний
+        </Typography>
+        <Box sx={{ display: { xs: "block", md: "flex" }, mb: 5 }}>
+          <Box
+            sx={{
+              background: "#222324",
+              minWidth: { xs: "90%", md: "30%" },
+              maxWidth: { xs: "90%", md: "30%" },
+              minHeight: "450px",
+              maxHeight: "450px",
+              borderRadius: "3px",
+              position: "relative",
+              mr: 3,
+            }}
+          >
+            <Chip
+              label="ТОП #1 в этом месяце"
+              variant="outlined"
+              sx={{
+                background: "transparent",
+                fontFamily: font,
+                color: secondColor,
+                border: `2px solid ${firstColor}`,
+                m: { xs: 1, lg: 2 },
+              }}
+            />
+            <Typography
+              sx={{
+                fontFamily: font,
+                color: secondColor,
+                fontWeight: 700,
+                fontSize: "180%",
+                position: "absolute",
+                bottom: "1.6rem",
+                ml: 1.5,
+              }}
+            >
+              ARTIST 1
+            </Typography>
+            <Typography
+              sx={{
+                fontFamily: font,
+                color: secondColor,
+                fontWeight: 600,
+                fontSize: "80%",
+                position: "absolute",
+                bottom: "0.8rem",
+                ml: 1.5,
+              }}
+            >
+              500,000 слушателей за месяц
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              background: "#222324",
+              minWidth: { xs: "90%", md: "30%" },
+              maxWidth: { xs: "90%", md: "30%" },
+              minHeight: "450px",
+              maxHeight: "450px",
+              borderRadius: "3px",
+              position: "relative",
+              mr: 3,
+              my: { xs: 5, md: 0 },
+            }}
+          >
+            <Typography
+              sx={{
+                fontFamily: font,
+                color: secondColor,
+                fontWeight: 700,
+                fontSize: "180%",
+                position: "absolute",
+                bottom: "1.6rem",
+                ml: 1.5,
+              }}
+            >
+              ARTIST 2
+            </Typography>
+            <Typography
+              sx={{
+                fontFamily: font,
+                color: secondColor,
+                fontWeight: 600,
+                fontSize: "80%",
+                position: "absolute",
+                bottom: "0.8rem",
+                ml: 1.5,
+              }}
+            >
+              300,000 слушателей за месяц
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              background: "#222324",
+              minWidth: { xs: "90%", md: "30%" },
+              maxWidth: { xs: "90%", md: "30%" },
+              minHeight: "450px",
+              maxHeight: "450px",
+              borderRadius: "3px",
+              position: "relative",
+            }}
+          >
+            <Typography
+              sx={{
+                fontFamily: font,
+                color: secondColor,
+                fontWeight: 700,
+                fontSize: "180%",
+                position: "absolute",
+                bottom: "1.6rem",
+                ml: 1.5,
+              }}
+            >
+              ARTIST 3
+            </Typography>
+            <Typography
+              sx={{
+                fontFamily: font,
+                color: secondColor,
+                fontWeight: 600,
+                fontSize: "80%",
+                position: "absolute",
+                bottom: "0.8rem",
+                ml: 1.5,
+              }}
+            >
+              100,000 слушателей за месяц
+            </Typography>
           </Box>
         </Box>
       </Box>

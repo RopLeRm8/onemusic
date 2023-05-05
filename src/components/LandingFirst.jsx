@@ -17,7 +17,7 @@ export default function LandingFirst() {
   const font = MainContextVal.fonts[0];
 
   const GradientCircle = styled("div")({
-    width: "7.5px",
+    width: "6px",
     height: "6px",
     marginRight: "0.7rem",
     borderRadius: "50%",
@@ -252,94 +252,6 @@ export default function LandingFirst() {
           }}
         >
           Скачать
-        </Button>
-      </Box>
-      {/* First footer */}
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          alignItems: "center",
-          width: "100%",
-          background: firstColor,
-          py: 4,
-        }}
-      >
-        <Box sx={{ display: "block", textAlign: "center" }}>
-          <Typography
-            sx={{
-              fontFamily: font,
-              color: "black",
-              fontSize: "180%",
-              fontWeight: 800,
-            }}
-          >
-            БЕСПЛАТНО
-          </Typography>
-          <Typography
-            sx={{
-              fontFamily: font,
-              color: "black",
-              fontSize: "80%",
-              fontWeight: 600,
-            }}
-          >
-            с момента открытия по 15.07
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            display: "block",
-            mx: -11,
-          }}
-        >
-          <Typography
-            sx={{
-              fontFamily: font,
-              color: "black",
-              fontSize: "150%",
-              fontWeight: 600,
-            }}
-          >
-            В честь запуска сервиса
-          </Typography>
-          <Typography
-            sx={{
-              fontFamily: font,
-              color: "black",
-              fontSize: "70%",
-              fontWeight: 500,
-            }}
-          >
-            Успей зарегистрироваться и получить
-          </Typography>
-          <Typography
-            sx={{
-              fontFamily: font,
-              color: "black",
-              fontSize: "70%",
-              fontWeight: 500,
-            }}
-          >
-            бесплатную подписку на 3 месяца
-          </Typography>
-        </Box>
-        <Button
-          sx={{
-            fontFamily: font,
-            color: "black",
-            fontSize: "70%",
-            fontWeight: 600,
-            textTransform: "none",
-            border: "1px solid black",
-            p: 3,
-            "&:hover": {
-              color: firstColor,
-              background: "black",
-            },
-          }}
-        >
-          Условия акции
         </Button>
       </Box>
     </>

@@ -64,11 +64,10 @@ export default function Navbar() {
           }}
         >
           {pages.map((page) => (
-            <>
+            <Box key={page[0]}>
               <Button
                 variant="text"
                 color="inherit"
-                key={page}
                 sx={{
                   textTransform: "none",
                   fontFamily: font,
@@ -119,7 +118,7 @@ export default function Navbar() {
                   }}
                 />
               ) : null}
-            </>
+            </Box>
           ))}
         </Box>
       </Container>
