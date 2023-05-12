@@ -19,7 +19,7 @@ export default function RouteProvider() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="*" element={<Navigate to="/" />} />
-          <Route path="/id" element={<IdPage />} />
+          <Route path="/auth" element={<IdPage />} />
         </Routes>
       </BrowserRouter>
     </MainContext.Provider>

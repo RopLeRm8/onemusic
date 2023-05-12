@@ -25,7 +25,7 @@ export default function IdPage() {
   }, []);
 
   return (
-    <Centered style={{ minWidth: "45%", maxWidth: "70%" }}>
+    <Centered style={{ minWidth: "45%", maxWidth: { xs: "75%", md: "45%" } }}>
       <Box
         sx={{
           border: `2px rgba(${BORDERINITIALCOLOR}, 0.1) solid`,

@@ -1,14 +1,26 @@
-import { Button, Grid, TextField, Typography } from "@mui/material";
+import CheckIcon from "@mui/icons-material/Check";
+import {
+  Box,
+  Button,
+  Checkbox,
+  Grid,
+  InputAdornment,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { useContext } from "react";
-import biglogo from "../../assets/ID/biglogo.png";
+import arrow from "../../assets/ID/arrow.svg";
+import biglogo from "../../assets/ID/biglogo.svg";
 import { IdContext } from "../../pages/IdPage";
-
 export default function SecondBox() {
   const idValues = useContext(IdContext);
   const font = idValues.font;
   const firstColor = idValues.firstColor;
   const secondColor = idValues.secondColor;
   const BORDERINITIALCOLOR = idValues.BORDERINITIALCOLOR;
+  const USERAGREEMENT = "";
+  const POLITICSCONFID = "";
+  const GIVENDATA = "";
   return (
     <Grid
       container
@@ -58,8 +70,18 @@ export default function SecondBox() {
             fontFamily: font,
           },
         }}
-        placeholder="+7"
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start" disableTypography>
+              <Typography sx={{ color: "white", fontFamily: font, mr: -1 }}>
+                +7
+              </Typography>
+            </InputAdornment>
+          ),
+          sx: { color: secondColor },
+        }}
         type="tel"
+        autoComplete="off"
       />
       <Button
         sx={{
@@ -81,62 +103,154 @@ export default function SecondBox() {
       >
         Продолжить
       </Button>
-      <Typography
+      <Box
         sx={{
-          fontFamily: font,
-          color: secondColor,
-          fontWeight: 500,
-          opacity: 0.5,
-        }}
-      >
-        или
-      </Typography>
-      <Button
-        sx={{
+          display: "flex",
+          alignSelf: "start",
+          alignItems: "center",
           width: "85%",
-          fontFamily: font,
-          fontWeight: 500,
-          fontSize: "80%",
-          borderRadius: "2px",
-          border: `2px rgba(${BORDERINITIALCOLOR}, 0.05) solid`,
-          background: "transparent",
-          color: secondColor,
-          my: 2,
-          textTransform: "none",
-          py: 1.1,
-          "&:hover": {
-            color: firstColor,
-            border: `2px ${firstColor} solid`,
-          },
+          mx: "auto",
+          mb: 2,
         }}
       >
-        QR-код
-      </Button>
-      {/* <Typography
-      sx={{
-        fontFamily: font,
-        color: secondColor,
-        fontWeight: 500,
-        fontSize: "60%",
-        opacity: 0.5,
-        textAlign: "center",
-      }}
-    >
-      Нажимая «Продолжить», вы принимаете пользовательское соглашение и
-      политику конфиденциальности
-    </Typography>
-    <Typography
-      sx={{
-        fontFamily: font,
-        color: secondColor,
-        fontSize: "60%",
-        fontWeight: 500,
-        opacity: 0.7,
-        textAlign: "center",
-      }}
-    >
-      Передаваемые данные
-    </Typography> */}
+        <Checkbox
+          sx={{
+            p: 0,
+            width: "30px",
+            height: "30px",
+            borderRadius: "3px",
+            border: `2px rgba(${BORDERINITIALCOLOR}, 0.2) solid`,
+            "&.Mui-checked": {
+              color: firstColor,
+              background: firstColor,
+              border: `0px solid`,
+            },
+            "& .MuiSvgIcon-root": {
+              fontSize: "2.5rem",
+              p: 0,
+            },
+            mr: 1.5,
+          }}
+          checkedIcon={<CheckIcon sx={{ maxWidth: "80%", color: "black" }} />}
+        />
+        <Typography
+          sx={{
+            fontFamily: font,
+            color: secondColor,
+            fontWeight: 500,
+            fontSize: "80%",
+            opacity: 0.25,
+            textAlign: "center",
+            display: "inline",
+            mr: 0.5,
+          }}
+        >
+          Сохранить вход
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          width: "95%",
+          height: { md: "23%", xl: "17%" },
+          marginTop: "auto",
+          textAlign: "center",
+        }}
+      >
+        <Typography
+          sx={{
+            fontFamily: font,
+            color: secondColor,
+            fontWeight: 500,
+            fontSize: "80%",
+            opacity: 0.5,
+            textAlign: "center",
+            display: "inline",
+            mr: 0.5,
+          }}
+        >
+          Нажимая «Продолжить», вы принимаете
+        </Typography>
+        <a href={USERAGREEMENT}>
+          <Typography
+            sx={{
+              fontFamily: font,
+              color: secondColor,
+              fontWeight: 500,
+              fontSize: "80%",
+              opacity: 0.7,
+              textAlign: "center",
+              textDecoration: "underline",
+              display: "inline",
+              "&:hover": {
+                opacity: 1,
+              },
+            }}
+          >
+            пользовательское соглашение
+          </Typography>
+        </a>
+        <Typography
+          sx={{
+            fontFamily: font,
+            color: secondColor,
+            fontWeight: 500,
+            fontSize: "80%",
+            opacity: 0.5,
+            textAlign: "center",
+            display: "inline",
+            mx: 0.5,
+          }}
+        >
+          и
+        </Typography>
+        <a href={POLITICSCONFID}>
+          <Typography
+            sx={{
+              fontFamily: font,
+              color: secondColor,
+              fontWeight: 500,
+              fontSize: "80%",
+              opacity: 0.7,
+              textAlign: "center",
+              textDecoration: "underline",
+              display: "inline",
+              "&:hover": {
+                opacity: 1,
+              },
+            }}
+          >
+            политику конфиденциальности
+          </Typography>
+        </a>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            mt: 1,
+          }}
+        >
+          <a href={GIVENDATA}>
+            <Typography
+              sx={{
+                fontFamily: font,
+                color: secondColor,
+                fontSize: "80%",
+                fontWeight: 500,
+                opacity: 0.7,
+                textAlign: "center",
+                mr: 1,
+                "&:hover": {
+                  opacity: 1,
+                },
+              }}
+            >
+              Передаваемые данные
+            </Typography>
+          </a>
+          <img src={arrow} alt="" />
+        </Box>
+      </Box>
     </Grid>
   );
 }

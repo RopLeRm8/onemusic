@@ -25,7 +25,7 @@ export default function LandingFirst() {
     backgroundImage: "linear-gradient(to left, #15E78F, #0E4FF1)",
   });
   const handleRedirectToID = useCallback(() => {
-    redirect("/id");
+    redirect("/auth");
   }, [redirect]);
   return (
     <>

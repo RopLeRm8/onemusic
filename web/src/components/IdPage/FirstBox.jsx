@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { useContext } from "react";
-import logo from "../../assets/ID/logo.png";
+import logo from "../../assets/ID/logo.svg";
 import { IdContext } from "../../pages/IdPage";
 
 export default function FirstBox() {
@@ -10,6 +10,7 @@ export default function FirstBox() {
   const firstColor = idValues.firstColor;
   const secondColor = idValues.secondColor;
   const priorities = idValues.priorities;
+  const MOREABOUTID = "";
   return (
     <Box
       sx={{
@@ -20,19 +21,7 @@ export default function FirstBox() {
         width: { xs: "auto", md: "70%" },
       }}
     >
-      <Box sx={{ display: "flex" }}>
-        <img src={logo} alt="" />
-        <Typography
-          sx={{
-            fontFamily: font,
-            color: secondColor,
-            fontWeight: 600,
-            ml: 1,
-          }}
-        >
-          ID
-        </Typography>
-      </Box>
+      <img src={logo} alt="" />
       <Typography
         sx={{
           fontFamily: font,
@@ -67,16 +56,17 @@ export default function FirstBox() {
           </Box>
         ))}
       </Box>
-      <a href="">
+      <a href={MOREABOUTID}>
         <Typography
           sx={{
             fontFamily: font,
             color: firstColor,
             fontWeight: 500,
-            fontSize: "90%",
+            fontSize: "60%",
             position: "absolute",
-            top: { xs: "95%", md: "92%" },
-            left: { xs: "5%", md: "3%" },
+            top: { md: "93%" },
+            left: { md: "3%" },
+            maxWidth: "40%",
             display: { xs: "none", md: "flex" },
             transition: "0.2s all ease-in-out",
             "&:hover": {
