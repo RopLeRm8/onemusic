@@ -17,7 +17,7 @@ export default function FirstBox() {
         background: firstBoxBackground,
         px: 3,
         py: 2.5,
-        pr: 0,
+        pr: { md: 3, xl: 0 },
         width: { xs: "auto", md: "70%" },
       }}
     >
@@ -65,7 +65,6 @@ export default function FirstBox() {
             fontSize: "60%",
             position: "absolute",
             top: { md: "93%" },
-            left: { md: "3%" },
             maxWidth: "40%",
             display: { xs: "none", md: "flex" },
             transition: "0.2s all ease-in-out",

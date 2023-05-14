@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { useLoadFonts } from "../hooks/useLoadFonts";
 import IdPage from "../pages/IdPage";
 import Landing from "../pages/Landing";
+import ProfilePage from "../pages/ProfilePage";
 
 export const MainContext = createContext();
 
@@ -20,6 +21,7 @@ export default function RouteProvider() {
           <Route path="/" element={<Landing />} />
           <Route path="*" element={<Navigate to="/" />} />
           <Route path="/auth" element={<IdPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </BrowserRouter>
     </MainContext.Provider>
