@@ -1,6 +1,7 @@
 import { createContext, useEffect } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { useLoadFonts } from "../hooks/useLoadFonts";
+import { useLoadFonts } from "../lib/hooks/useLoadFonts";
+import useSetPageBlack from "../lib/hooks/useSetPageBlack";
 import IdPage from "../pages/IdPage";
 import Landing from "../pages/Landing";
 import ProfilePage from "../pages/ProfilePage";
@@ -8,6 +9,7 @@ import ProfilePage from "../pages/ProfilePage";
 export const MainContext = createContext();
 
 export default function RouteProvider() {
+  useSetPageBlack();
   const loadFonts = useLoadFonts();
   useEffect(() => {
     loadFonts;

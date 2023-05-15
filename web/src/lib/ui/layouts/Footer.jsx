@@ -1,10 +1,10 @@
 import { Box, Grid, IconButton, Typography } from "@mui/material";
 import { useContext } from "react";
-import tele from "../assets/Footer/tele.png";
-import vk from "../assets/Footer/vk.png";
-import yt from "../assets/Footer/yt.png";
-import logo from "../assets/Global/logo.svg";
-import { MainContext } from "../providers/RouteProvider";
+import tele from "../../../assets/Footer/tele.png";
+import vk from "../../../assets/Footer/vk.png";
+import yt from "../../../assets/Footer/yt.png";
+import logo from "../../../assets/Global/logo.svg";
+import { MainContext } from "../../../providers/RouteProvider";
 
 export default function Footer() {
   const MainContextVal = useContext(MainContext);

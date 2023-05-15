@@ -1,6 +1,6 @@
-import fast from "../assets/ID/fast.svg";
-import person from "../assets/ID/person.svg";
-import security from "../assets/ID/security.svg";
+import fast from "../../assets/ID/fast.svg";
+import person from "../../assets/ID/person.svg";
+import security from "../../assets/ID/security.svg";
 
 export default function useGetIdPriorities() {
   const priorities = [

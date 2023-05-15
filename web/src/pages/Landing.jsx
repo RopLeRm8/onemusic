@@ -1,18 +1,11 @@
-import { useEffect } from "react";
 import LandingFirst from "../components/Landing/LandingFirst";
 import LandingFooter from "../components/Landing/LandingFooter";
 import LandingSecond from "../components/Landing/LandingSecond";
 import LandingThird from "../components/Landing/LandingThird";
 import "../css/pageBack.css";
-import Footer from "../layouts/Footer";
-import Navbar from "../layouts/Navbar";
+import Footer from "../lib/ui/layouts/Footer";
+import Navbar from "../lib/ui/layouts/Navbar";
 export default function Landing() {
-  useEffect(() => {
-    document.body.classList.add("pageBack");
-    return () => {
-      document.body.classList.remove("pageBack");
-    };
-  }, []);
   return (
     <>
       <Navbar />

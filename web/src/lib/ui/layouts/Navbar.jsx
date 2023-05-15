@@ -6,8 +6,8 @@ import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
 import { useContext } from "react";
-import logo from "../assets/Global/logo.svg";
-import { MainContext } from "../providers/RouteProvider";
+import logo from "../../../assets/Global/logo.svg";
+import { MainContext } from "../../../providers/RouteProvider";
 export default function Navbar() {
   const MainContextVal = useContext(MainContext);
   const firstColor = MainContextVal.colors[0];

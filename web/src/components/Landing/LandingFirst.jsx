@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { useCallback, useContext } from "react";
 import redirectIcon from "../../assets/Landing/redirect.svg";
-import useRedirect from "../../hooks/useRedirect";
+import useRedirect from "../../lib/hooks/useRedirect";
 import { MainContext } from "../../providers/RouteProvider";
 export default function LandingFirst() {
   const MainContextVal = useContext(MainContext);

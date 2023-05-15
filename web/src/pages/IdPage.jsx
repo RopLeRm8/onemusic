@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
-import { createContext, useContext, useEffect } from "react";
+import { createContext, useContext } from "react";
 import FirstBox from "../components/IdPage/FirstBox";
 import SecondBox from "../components/IdPage/SecondBox";
 import "../css/pageBack.css";
-import useGetIdPriorities from "../hooks/useGetIdPriorities";
-import Centered from "../layouts/Centered";
+import useGetIdPriorities from "../lib/hooks/useGetIdPriorities";
+import Centered from "../lib/ui/layouts/Centered";
 import { MainContext } from "../providers/RouteProvider";
 
 export const IdContext = createContext();
@@ -16,13 +16,6 @@ export default function IdPage() {
   const font = MainContextVal.fonts[0];
   const BORDERINITIALCOLOR = "255,255,255";
   const priorities = useGetIdPriorities();
-
-  useEffect(() => {
-    document.body.classList.add("pageBack");
-    return () => {
-      document.body.classList.remove("pageBack");
-    };
-  }, []);
 
   return (
     <Centered style={{ minWidth: "45%", maxWidth: { xs: "75%", md: "45%" } }}>

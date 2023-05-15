@@ -4,7 +4,7 @@ import rect from "../../assets/Landing/rect.svg";
 import stepsImg from "../../assets/Landing/steps.png";
 import x_1 from "../../assets/Landing/x_1.svg";
 import x_2 from "../../assets/Landing/x_2.svg";
-import useGetSteps from "../../hooks/useGetSteps";
+import useGetSteps from "../../lib/hooks/useGetSteps";
 import { MainContext } from "../../providers/RouteProvider";
 export default function LandingSecond() {
   const [lastScrollPosition, setLastScrollPosition] = useState(0);

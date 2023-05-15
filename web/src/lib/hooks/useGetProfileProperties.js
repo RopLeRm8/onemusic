@@ -1,7 +1,7 @@
-import balance from "../assets/Profile/balance.png";
-import home from "../assets/Profile/home.png";
-import keys from "../assets/Profile/key.png";
-import services from "../assets/Profile/services.png";
+import balance from "../../assets/Profile/balance.png";
+import home from "../../assets/Profile/home.png";
+import keys from "../../assets/Profile/key.png";
+import services from "../../assets/Profile/services.png";
 export default function useGetProfileProperties() {
   const propsList = [
     {
