@@ -1,8 +1,8 @@
-import LandingFirst from "../components/Landing/LandingFirst";
-import LandingFooter from "../components/Landing/LandingFooter";
-import LandingSecond from "../components/Landing/LandingSecond";
-import LandingThird from "../components/Landing/LandingThird";
 import "../css/pageBack.css";
+import LandingFirst from "../lib/ui/components/Landing/LandingFirst";
+import LandingFooter from "../lib/ui/components/Landing/LandingFooter";
+import LandingSecond from "../lib/ui/components/Landing/LandingSecond";
+import LandingThird from "../lib/ui/components/Landing/LandingThird";
 import Footer from "../lib/ui/layouts/Footer";
 import Navbar from "../lib/ui/layouts/Navbar";
 export default function Landing() {

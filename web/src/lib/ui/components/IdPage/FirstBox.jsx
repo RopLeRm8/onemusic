@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { useContext } from "react";
-import logo from "../../assets/ID/logo.svg";
-import { IdContext } from "../../pages/IdPage";
+import logo from "../../../../assets/ID/logo.svg";
+import { IdContext } from "../../../../pages/IdPage";
 
 export default function FirstBox() {
   const firstBoxBackground = "#0d0d0d";

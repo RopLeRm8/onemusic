@@ -8,9 +8,9 @@ import {
   styled,
 } from "@mui/material";
 import { useCallback, useContext } from "react";
-import redirectIcon from "../../assets/Landing/redirect.svg";
-import useRedirect from "../../lib/hooks/useRedirect";
-import { MainContext } from "../../providers/RouteProvider";
+import redirectIcon from "../../../../assets/Landing/redirect.svg";
+import { MainContext } from "../../../../providers/RouteProvider";
+import useRedirect from "../../../hooks/useRedirect";
 export default function LandingFirst() {
   const MainContextVal = useContext(MainContext);
   const firstColor = MainContextVal.colors[0];

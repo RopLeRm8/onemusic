@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import { useContext } from "react";
-import { MainContext } from "../../providers/RouteProvider";
+import { MainContext } from "../../../../providers/RouteProvider";
 export default function LandingFooter({ text }) {
   const MainContextVal = useContext(MainContext);
   const firstColor = MainContextVal.colors[0];

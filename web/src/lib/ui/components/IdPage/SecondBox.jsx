@@ -9,9 +9,9 @@ import {
   Typography,
 } from "@mui/material";
 import { useContext } from "react";
-import arrow from "../../assets/ID/arrow.svg";
-import biglogo from "../../assets/ID/biglogo.svg";
-import { IdContext } from "../../pages/IdPage";
+import arrow from "../../../../assets/ID/arrow.svg";
+import biglogo from "../../../../assets/ID/biglogo.svg";
+import { IdContext } from "../../../../pages/IdPage";
 export default function SecondBox() {
   const idValues = useContext(IdContext);
   const font = idValues.font;

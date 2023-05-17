@@ -1,7 +1,7 @@
 import { Button, Divider, Grid, Typography } from "@mui/material";
 import { useContext } from "react";
-import useGetProfileProperties from "../../lib/hooks/useGetProfileProperties";
-import { ProfilePageContext } from "../../pages/ProfilePage";
+import { ProfilePageContext } from "../../../../pages/ProfilePage";
+import useGetProfileProperties from "../../../hooks/useGetProfileProperties";
 
 export default function ProfileProperties() {
   const ProfilePageContextVal = useContext(ProfilePageContext);

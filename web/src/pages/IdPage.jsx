@@ -1,13 +1,13 @@
 import { Box } from "@mui/material";
 import { createContext, useContext } from "react";
-import FirstBox from "../components/IdPage/FirstBox";
-import SecondBox from "../components/IdPage/SecondBox";
+import FirstBox from "../lib/ui/components/IdPage/FirstBox";
+import SecondBox from "../lib/ui/components/IdPage/SecondBox";
 import "../css/pageBack.css";
 import useGetIdPriorities from "../lib/hooks/useGetIdPriorities";
 import Centered from "../lib/ui/layouts/Centered";
 import { MainContext } from "../providers/RouteProvider";
 
-export const IdContext = createContext();
+export const IdContext = createContext({});
 
 export default function IdPage() {
   const MainContextVal = useContext(MainContext);

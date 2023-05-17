@@ -1,7 +1,7 @@
 import { Avatar, Box, Typography } from "@mui/material";
 import { useContext } from "react";
-import logo from "../../assets/Profile/biglogo.svg";
-import { ProfilePageContext } from "../../pages/ProfilePage";
+import logo from "../../../../assets/Profile/biglogo.svg";
+import { ProfilePageContext } from "../../../../pages/ProfilePage";
 
 export default function UpperInfo() {
   const ProfilePageContextVal = useContext(ProfilePageContext);

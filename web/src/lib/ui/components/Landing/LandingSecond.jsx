@@ -1,11 +1,11 @@
 import { Box, Button, Chip, List, ListItem, Typography } from "@mui/material";
 import { useContext, useEffect, useRef, useState } from "react";
-import rect from "../../assets/Landing/rect.svg";
-import stepsImg from "../../assets/Landing/steps.png";
-import x_1 from "../../assets/Landing/x_1.svg";
-import x_2 from "../../assets/Landing/x_2.svg";
-import useGetSteps from "../../lib/hooks/useGetSteps";
-import { MainContext } from "../../providers/RouteProvider";
+import rect from "../../../../assets/Landing/rect.svg";
+import stepsImg from "../../../../assets/Landing/steps.png";
+import x_1 from "../../../../assets/Landing/x_1.svg";
+import x_2 from "../../../../assets/Landing/x_2.svg";
+import { MainContext } from "../../../../providers/RouteProvider";
+import useGetSteps from "../../../hooks/useGetSteps";
 export default function LandingSecond() {
   const [lastScrollPosition, setLastScrollPosition] = useState(0);
   const x1Img = useRef();
