@@ -1,16 +1,13 @@
 import { Button, Divider, Grid, Typography } from "@mui/material";
-import { useContext } from "react";
-import { ProfilePageContext } from "../../../../pages/ProfilePage";
+
+import useGetProfilePageValues from "../../../hooks/useGetProfilePageValues";
 import useGetProfileProperties from "../../../hooks/useGetProfileProperties";
 
 export default function ProfileProperties() {
-  const ProfilePageContextVal = useContext(ProfilePageContext);
-  const font = ProfilePageContextVal.font;
-  const firstColor = ProfilePageContextVal.firstColor;
-  const secondColor = ProfilePageContextVal.secondColor;
   const TABSBACKGROUNDCOLOR = "rgba(255, 255, 255,0.05)";
   const DIVIDERCOLOR = "rgba(255, 255, 255,0.1)";
   const OPTIONSCOLOR = "rgba(255, 255, 255,0.25)";
+  const { font, firstColor, secondColor } = useGetProfilePageValues();
 
   const { propsList, optionsList } = useGetProfileProperties();
   return (
@@ -18,7 +15,7 @@ export default function ProfileProperties() {
       container
       direction="column"
       spacing={2}
-      alignItems={{ xs: "center", md: "flex-start" }}
+      alignItems={{ xs: "center", sm: "flex-start" }}
     >
       {propsList.map((prop) => (
         <Grid

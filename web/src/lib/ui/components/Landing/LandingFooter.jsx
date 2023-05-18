@@ -1,10 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
-import { useContext } from "react";
-import { MainContext } from "../../../../providers/RouteProvider";
+import useGetGlobalValues from "../../../hooks/useGetGlobalValues";
 export default function LandingFooter({ text }) {
-  const MainContextVal = useContext(MainContext);
-  const firstColor = MainContextVal.colors[0];
-  const font = MainContextVal.fonts[0];
+  const { firstColor, font } = useGetGlobalValues();
   return (
     <Box
       sx={{

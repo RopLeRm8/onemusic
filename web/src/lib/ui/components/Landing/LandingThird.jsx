@@ -1,13 +1,10 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
-import { useContext } from "react";
 // import appleLogo from "../../../../assets/Landing/apple.png";
 // import googlePlay from "../../../../assets/Landing/googleplay.png";
-import { MainContext } from "../../../../providers/RouteProvider";
+import useGetGlobalValues from "../../../hooks/useGetGlobalValues";
+
 export default function LandingThird() {
-  const MainContextVal = useContext(MainContext);
-  const firstColor = MainContextVal.colors[0];
-  const secondColor = MainContextVal.colors[1];
-  const font = MainContextVal.fonts[0];
+  const { firstColor, secondColor, font } = useGetGlobalValues();
 
   return (
     <Grid container sx={{ mt: 7 }} direction="column" alignItems="center">

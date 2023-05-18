@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
 import { createContext, useContext } from "react";
-import FirstBox from "../lib/ui/components/IdPage/FirstBox";
-import SecondBox from "../lib/ui/components/IdPage/SecondBox";
 import "../css/pageBack.css";
 import useGetIdPriorities from "../lib/hooks/useGetIdPriorities";
+import FirstBox from "../lib/ui/components/IdPage/FirstBox";
+import SecondBox from "../lib/ui/components/IdPage/SecondBox";
 import Centered from "../lib/ui/layouts/Centered";
 import { MainContext } from "../providers/RouteProvider";
 
@@ -18,7 +18,14 @@ export default function IdPage() {
   const priorities = useGetIdPriorities();
 
   return (
-    <Centered style={{ minWidth: "45%", maxWidth: { xs: "75%", md: "45%" } }}>
+    <Centered
+      style={{
+        width: {
+          xs: "clamp(200px,  80vw, 700px)",
+          sm: "clamp(200px,  50vw, 700px)",
+        },
+      }}
+    >
       <Box
         sx={{
           border: `2px rgba(${BORDERINITIALCOLOR}, 0.1) solid`,

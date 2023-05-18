@@ -8,19 +8,15 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { useContext } from "react";
 import arrow from "../../../../assets/ID/arrow.svg";
 import biglogo from "../../../../assets/ID/biglogo.svg";
-import { IdContext } from "../../../../pages/IdPage";
+import useGetIdPageValues from "../../../hooks/useGetIdPageValues";
 export default function SecondBox() {
-  const idValues = useContext(IdContext);
-  const font = idValues.font;
-  const firstColor = idValues.firstColor;
-  const secondColor = idValues.secondColor;
-  const BORDERINITIALCOLOR = idValues.BORDERINITIALCOLOR;
   const USERAGREEMENT = "";
   const POLITICSCONFID = "";
   const GIVENDATA = "";
+  const { font, firstColor, secondColor, BORDERINITIALCOLOR } =
+    useGetIdPageValues();
   return (
     <Grid
       container

@@ -1,15 +1,10 @@
 import { Box, Typography } from "@mui/material";
-import { useContext } from "react";
 import logo from "../../../../assets/ID/logo.svg";
-import { IdContext } from "../../../../pages/IdPage";
+import useGetIdPageValues from "../../../hooks/useGetIdPageValues";
 
 export default function FirstBox() {
   const firstBoxBackground = "#0d0d0d";
-  const idValues = useContext(IdContext);
-  const font = idValues.font;
-  const firstColor = idValues.firstColor;
-  const secondColor = idValues.secondColor;
-  const priorities = idValues.priorities;
+  const { font, firstColor, secondColor, priorities } = useGetIdPageValues();
   const MOREABOUTID = "";
   return (
     <Box

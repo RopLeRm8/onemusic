@@ -1,29 +1,12 @@
-import {
-  Box,
-  Button,
-  Grid,
-  List,
-  ListItem,
-  Typography,
-  styled,
-} from "@mui/material";
-import { useCallback, useContext } from "react";
+import { Box, Button, Grid, List, ListItem, Typography } from "@mui/material";
+import { useCallback } from "react";
 import redirectIcon from "../../../../assets/Landing/redirect.svg";
-import { MainContext } from "../../../../providers/RouteProvider";
+import useGetGlobalValues from "../../../hooks/useGetGlobalValues";
 import useRedirect from "../../../hooks/useRedirect";
+import GradientCircle from "../../customElements/GradientCircle";
 export default function LandingFirst() {
-  const MainContextVal = useContext(MainContext);
-  const firstColor = MainContextVal.colors[0];
-  const secondColor = MainContextVal.colors[1];
-  const font = MainContextVal.fonts[0];
+  const { firstColor, secondColor, font } = useGetGlobalValues();
   const redirect = useRedirect();
-  const GradientCircle = styled("div")({
-    width: "6px",
-    height: "6px",
-    marginRight: "0.7rem",
-    borderRadius: "50%",
-    backgroundImage: "linear-gradient(to left, #15E78F, #0E4FF1)",
-  });
   const handleRedirectToID = useCallback(() => {
     redirect("/auth");
   }, [redirect]);

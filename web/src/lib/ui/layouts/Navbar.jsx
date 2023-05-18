@@ -5,27 +5,17 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
-import { useContext } from "react";
 import logo from "../../../assets/Global/logo.svg";
-import { MainContext } from "../../../providers/RouteProvider";
+import useGetGlobalValues from "../../hooks/useGetGlobalValues";
+import useGetNavbarLinks from "../../hooks/useGetNavbarLinks";
 export default function Navbar() {
-  const MainContextVal = useContext(MainContext);
-  const firstColor = MainContextVal.colors[0];
-  const secondColor = MainContextVal.colors[1];
-  const font = MainContextVal.fonts[0];
-  const pages = [
-    ["Подписка", "rgba(63, 195, 128)", "See who leads now", "/leaderboard"],
-    ["Слушать", "rgba(175, 65, 84)", "Custom car design", "/customize"],
-    ["О нас", "rgba(159, 90, 253)", "Informative Page", "/about"],
-    ["Подписаться", "rgba(241, 90, 34)", "FAQ page", "/gettingstarted"],
-  ];
+  const pages = useGetNavbarLinks();
+  const { firstColor, secondColor, font } = useGetGlobalValues();
   return (
     <AppBar
       position="static"
       sx={{
-        maxWidth: "75%",
-        flexGrow: 1,
-        flexShrink: 0,
+        width: "clamp(75% ,  50vw, 75%)",
         mx: "auto",
         bgcolor: "transparent",
       }}
@@ -50,7 +40,6 @@ export default function Navbar() {
                 display: { xs: "none", md: "flex" },
                 justifyContent: "center",
                 maxWidth: "80%",
-                maxHeight: "100px",
                 my: 5,
               }}
             >
@@ -61,7 +50,6 @@ export default function Navbar() {
                   minWidth: "80%",
                   userSelect: "none",
                   pointerEvents: "none",
-                  flexShrink: 0,
                 }}
                 height="32"
                 alt=""

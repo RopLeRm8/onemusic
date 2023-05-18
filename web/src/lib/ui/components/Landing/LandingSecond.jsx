@@ -1,10 +1,11 @@
 import { Box, Button, Chip, List, ListItem, Typography } from "@mui/material";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import rect from "../../../../assets/Landing/rect.svg";
 import stepsImg from "../../../../assets/Landing/steps.png";
 import x_1 from "../../../../assets/Landing/x_1.svg";
 import x_2 from "../../../../assets/Landing/x_2.svg";
-import { MainContext } from "../../../../providers/RouteProvider";
+import useGetGlobalValues from "../../../hooks/useGetGlobalValues";
+
 import useGetSteps from "../../../hooks/useGetSteps";
 export default function LandingSecond() {
   const [lastScrollPosition, setLastScrollPosition] = useState(0);
@@ -35,10 +36,7 @@ export default function LandingSecond() {
       document.removeEventListener("scroll", scrollListen);
     };
   }, []);
-  const MainContextVal = useContext(MainContext);
-  const firstColor = MainContextVal.colors[0];
-  const secondColor = MainContextVal.colors[1];
-  const font = MainContextVal.fonts[0];
+  const { firstColor, secondColor, font } = useGetGlobalValues();
   const steps = useGetSteps();
   return (
     <>
@@ -581,6 +579,7 @@ export default function LandingSecond() {
               maxHeight: "450px",
               borderRadius: "3px",
               mr: 4,
+              mb: { xs: 3, md: 0 },
             }}
           >
             <Typography

@@ -1,15 +1,12 @@
 import { Box, Grid, IconButton, Typography } from "@mui/material";
-import { useContext } from "react";
 import tele from "../../../assets/Footer/tele.png";
 import vk from "../../../assets/Footer/vk.png";
 import yt from "../../../assets/Footer/yt.png";
 import logo from "../../../assets/Global/logo.svg";
-import { MainContext } from "../../../providers/RouteProvider";
+import useGetGlobalValues from "../../hooks/useGetGlobalValues";
 
 export default function Footer() {
-  const MainContextVal = useContext(MainContext);
-  const secondColor = MainContextVal.colors[1];
-  const font = MainContextVal.fonts[0];
+  const { secondColor, font } = useGetGlobalValues();
   const infoLinks = [
     {
       label: "О проекте",

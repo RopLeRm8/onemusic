@@ -1,12 +1,9 @@
 import { Avatar, Box, Typography } from "@mui/material";
-import { useContext } from "react";
 import logo from "../../../../assets/Profile/biglogo.svg";
-import { ProfilePageContext } from "../../../../pages/ProfilePage";
+import useGetProfilePageValues from "../../../hooks/useGetProfilePageValues";
 
 export default function UpperInfo() {
-  const ProfilePageContextVal = useContext(ProfilePageContext);
-  const font = ProfilePageContextVal.font;
-  const secondColor = ProfilePageContextVal.secondColor;
+  const { font, secondColor } = useGetProfilePageValues();
   return (
     <Box
       sx={{
