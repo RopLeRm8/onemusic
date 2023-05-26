@@ -4,9 +4,11 @@ import rect from "../../../../assets/Landing/rect.svg";
 import stepsImg from "../../../../assets/Landing/steps.png";
 import x_1 from "../../../../assets/Landing/x_1.svg";
 import x_2 from "../../../../assets/Landing/x_2.svg";
-import useGetGlobalValues from "../../../hooks/useGetGlobalValues";
 
-import useGetSteps from "../../../hooks/useGetSteps";
+import {
+  useGetGlobalValues,
+  useGetSteps,
+} from "../../../hooks/useDataHandling";
 export default function LandingSecond() {
   const [lastScrollPosition, setLastScrollPosition] = useState(0);
   const x1Img = useRef();
@@ -16,7 +18,7 @@ export default function LandingSecond() {
     const scrollListen = window.addEventListener("scroll", () => {
       const scrollPosition = window.scrollY;
 
-      const rotationAngle = scrollPosition * 0.1;
+      const rotationAngle = scrollPosition * 0.15;
       const scrollDirection =
         scrollPosition > lastScrollPosition ? "down" : "up";
       if (!x1Img.current || !x2Img.current || !rectImg.current) return;
@@ -94,7 +96,6 @@ export default function LandingSecond() {
                 position: "absolute",
                 right: "10%",
                 top: "-20px",
-                zIndex: -1,
                 userSelect: "none",
               }}
               ref={x2Img}
@@ -109,7 +110,7 @@ export default function LandingSecond() {
               fontWeight: 600,
               fontSize: "100%",
               whiteSpace: "pre-line",
-              width: { xs: "100%", md: "50%" },
+              width: { xs: "100%", md: "32rem" },
               mb: 2,
             }}
           >
@@ -130,7 +131,6 @@ export default function LandingSecond() {
                 position: "absolute",
                 right: "30%",
                 top: "45px",
-                zIndex: -1,
                 userSelect: "none",
               }}
               ref={x1Img}
@@ -142,7 +142,6 @@ export default function LandingSecond() {
                 position: "absolute",
                 right: "0%",
                 top: "-60px",
-                zIndex: -1,
                 userSelect: "none",
               }}
               ref={rectImg}
@@ -155,7 +154,7 @@ export default function LandingSecond() {
               fontWeight: 600,
               fontSize: "100%",
               whiteSpace: "pre-line",
-              width: { xs: "100%", md: "50%" },
+              width: { xs: "100%", md: "32rem" },
             }}
           >
             текста рыбы на русском языке, а начинающему оратору отточить навык
@@ -215,18 +214,25 @@ export default function LandingSecond() {
         sx={{
           display: { xs: "block", md: "flex" },
           maxWidth: "67%",
+          justifyContent: "start",
           flexGrow: 0,
           flexShrink: 1,
           mx: "auto",
           mb: 5,
         }}
       >
-        <Box sx={{ display: "block", mr: 3.5, mb: 3.5 }}>
+        <Box
+          sx={{
+            display: "block",
+            mr: 3.5,
+            mb: 3.5,
+            maxWidth: "clamp(30rem,  50vw, 30rem)",
+          }}
+        >
           <Box
             sx={{
               background: "#222324",
-              minWidth: { xs: "90%", md: "100%" },
-              maxWidth: { xs: "90%", md: "100%" },
+              maxWidth: "clamp(30rem,  50vw, 30rem)",
               minHeight: "300px",
               maxHeight: "300px",
               borderRadius: "3px",
@@ -255,12 +261,18 @@ export default function LandingSecond() {
             сгенерировать несколько абзацев более менее осмысленного
           </Typography>
         </Box>
-        <Box sx={{ display: "block", mr: 3.5, mb: 3.5 }}>
+        <Box
+          sx={{
+            display: "block",
+            mr: 3.5,
+            mb: 3.5,
+            maxWidth: "clamp(30rem,  50vw, 30rem)",
+          }}
+        >
           <Box
             sx={{
               background: "#222324",
-              minWidth: { xs: "90%", md: "100%" },
-              maxWidth: { xs: "90%", md: "100%" },
+              maxWidth: "clamp(30rem,  50vw, 30rem)",
               minHeight: "300px",
               maxHeight: "300px",
               borderRadius: "3px",
@@ -289,12 +301,17 @@ export default function LandingSecond() {
             сгенерировать несколько абзацев более менее осмысленного
           </Typography>
         </Box>
-        <Box sx={{ display: "block", mr: { xs: 3.5, md: 0 } }}>
+        <Box
+          sx={{
+            display: "block",
+            mr: { xs: 3.5, md: 0 },
+            maxWidth: "clamp(30rem,  50vw, 30rem)",
+          }}
+        >
           <Box
             sx={{
               background: "#222324",
-              minWidth: { xs: "90%", md: "100%" },
-              maxWidth: { xs: "90%", md: "100%" },
+              maxWidth: "clamp(30rem,  50vw, 30rem)",
               minHeight: "300px",
               maxHeight: "300px",
               borderRadius: "3px",
@@ -402,10 +419,10 @@ export default function LandingSecond() {
         <Box
           sx={{
             background: "#222324",
-            minWidth: "100%",
-            maxWidth: "100%",
+            maxWidth: "94rem",
             minHeight: "400px",
             borderRadius: "3px",
+
             mb: 10,
             display: { xs: "block", md: "flex" },
             justifyContent: { xs: "flex-start", md: "space-between" },
@@ -513,7 +530,14 @@ export default function LandingSecond() {
         >
           Статистика согласно количеству прослушиваний
         </Typography>
-        <Box sx={{ display: { xs: "block", md: "flex" }, mb: 5 }}>
+        <Box
+          sx={{
+            display: { xs: "block", md: "flex" },
+            mb: 5,
+            maxWidth: "clamp(94rem,  50vw, 94rem)",
+            gap: "1.7%",
+          }}
+        >
           <Box
             sx={{
               display: "flex",
@@ -525,7 +549,6 @@ export default function LandingSecond() {
               minHeight: "450px",
               maxHeight: "450px",
               borderRadius: "3px",
-              mr: 4,
               mb: { xs: 3, md: 0 },
             }}
           >
@@ -578,7 +601,6 @@ export default function LandingSecond() {
               minHeight: "450px",
               maxHeight: "450px",
               borderRadius: "3px",
-              mr: 4,
               mb: { xs: 3, md: 0 },
             }}
           >

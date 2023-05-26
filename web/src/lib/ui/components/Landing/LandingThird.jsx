@@ -1,7 +1,7 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 // import appleLogo from "../../../../assets/Landing/apple.png";
 // import googlePlay from "../../../../assets/Landing/googleplay.png";
-import useGetGlobalValues from "../../../hooks/useGetGlobalValues";
+import { useGetGlobalValues } from "../../../hooks/useDataHandling";
 
 export default function LandingThird() {
   const { firstColor, secondColor, font } = useGetGlobalValues();

@@ -7,7 +7,7 @@ export default function ProfileBoxMain({ children }) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        width: "clamp(200px,  80vw, 700px)",
+        width: { xs: "60%", sm: "50%" },
         height: "38rem",
         mx: "auto",
         flexDirection: "column",

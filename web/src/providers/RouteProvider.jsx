@@ -1,8 +1,7 @@
 import { createContext } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { useLoadFonts } from "../lib/hooks/useLoadFonts";
-import useSetPageBlack from "../lib/hooks/useSetPageBlack";
-import useSetRoutes from "../lib/hooks/useSetRoutes";
+import { useSetPageBlack, useSetRoutes } from "../lib/hooks/useRoutingHandlers";
 
 export const MainContext = createContext({
   colors: ["#15E78F", "white"],

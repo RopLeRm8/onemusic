@@ -6,15 +6,16 @@ Music fo everyone
 
 ### Todo
 
-- [ ] Buy DB at GCP and use it via postgreSQL
-- [ ] Buy server at GCP and host backend code on it
+- [ ] Buy DB at GCP and use it via postgreSQL  
+- [ ] Buy server at GCP and host backend code on it  
 
 ### In Progress
 
-- [ ] Make grey part of the landing page
-- [ ] Fix plashka to be in the same align positiion as the rest of elements
+- [ ] Fix plashka to be in the same align positionas the rest of elements  
+- [ ] Make grey part of the landing page  
 
 ### Done ✓
 
-- [x] Start building one ru id
-- [x] Fix navbar to be in the same align position as the rest of elements
+- [x] Start building one ru id  
+- [x] Fix navbar to be in the same align position as the rest of elements  
+

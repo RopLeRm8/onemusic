@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import logo from "../../../../assets/ID/logo.svg";
-import useGetIdPageValues from "../../../hooks/useGetIdPageValues";
+import { useGetIdPageValues } from "../../../hooks/useDataHandling";
 
 export default function FirstBox() {
   const firstBoxBackground = "#0d0d0d";

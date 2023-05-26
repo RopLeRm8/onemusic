@@ -1,37 +1,58 @@
-import MenuIcon from "@mui/icons-material/Menu";
-import { Divider } from "@mui/material";
+import {
+  BottomNavigation,
+  BottomNavigationAction,
+  Divider,
+  Paper,
+} from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import IconButton from "@mui/material/IconButton";
+import { useState } from "react";
 import logo from "../../../assets/Global/logo.svg";
-import useGetGlobalValues from "../../hooks/useGetGlobalValues";
-import useGetNavbarLinks from "../../hooks/useGetNavbarLinks";
+import {
+  useGetGlobalValues,
+  useGetNavbarLinks,
+} from "../../hooks/useDataHandling";
+import { useRenderLabel } from "../../hooks/useNavbarHandlers";
+
 export default function Navbar() {
   const pages = useGetNavbarLinks();
   const { firstColor, secondColor, font } = useGetGlobalValues();
+  const [selectedValue, setSelectedValue] = useState("");
+  const renderLabelHandler = useRenderLabel();
+  const handleNavChange = (_, newValue) => {
+    setSelectedValue(newValue);
+  };
+  const renderLabel = (label) => {
+    return renderLabelHandler(label, selectedValue, firstColor, secondColor);
+  };
+
   return (
     <AppBar
       position="static"
       sx={{
-        width: "clamp(75% ,  50vw, 75%)",
+        width: "71%",
+        maxWidth: "2120px",
+        minWidth: "68.5%",
         mx: "auto",
         bgcolor: "transparent",
       }}
     >
       <Container
         maxWidth={false}
+        disableGutters
         sx={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: { xs: "center", md: "space-between" },
+          position: "relative",
+          width: "clamp(100%, 50vw, 100%)",
         }}
       >
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
           }}
         >
           <a href="/">
@@ -39,15 +60,14 @@ export default function Navbar() {
               sx={{
                 display: { xs: "none", md: "flex" },
                 justifyContent: "center",
-                maxWidth: "80%",
+                maxWidth: { xs: "100%", md: "80%" },
                 my: 5,
               }}
             >
               <img
                 src={logo}
                 style={{
-                  maxWidth: "80%",
-                  minWidth: "80%",
+                  width: "80%",
                   userSelect: "none",
                   pointerEvents: "none",
                 }}
@@ -57,15 +77,71 @@ export default function Navbar() {
             </Box>
           </a>
         </Box>
-        <Box sx={{ display: { xs: "flex", md: "none" } }}>
-          <IconButton sx={{ color: secondColor }} size="small" color="inherit">
-            <MenuIcon />
-          </IconButton>
-        </Box>
-        <Box sx={{ display: { xs: "flex", md: "none" }, my: 2, ml: 5 }}>
-          <a href="/">
-            <img src={logo} height="25" alt="" style={{ maxWidth: "80%" }} />
-          </a>
+        <Box
+          sx={{
+            display: { xs: "flex", md: "none" },
+            mt: 5,
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <img src={logo} alt="" style={{ maxWidth: "80%" }} />
+          </Box>
+          <Paper
+            sx={{
+              position: "fixed",
+              bottom: -1,
+              left: 0,
+              right: 0,
+              zIndex: 30000,
+            }}
+            elevation={3}
+          >
+            <BottomNavigation
+              showLabels
+              sx={{
+                background: "black",
+                height: "9dvh",
+                alignItems: "center",
+              }}
+              value={selectedValue}
+              onChange={handleNavChange}
+            >
+              {pages.map((page) => (
+                <BottomNavigationAction
+                  key={page.label}
+                  label={renderLabel(page.label)}
+                  value={page.label}
+                  sx={{
+                    mb: 0.5,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    color: secondColor,
+                    ".MuiBottomNavigationAction-label": {
+                      fontFamily: font,
+                      fontWeight: 600,
+                      fontSize: "0.55rem",
+                    },
+                    "&.Mui-selected": {
+                      color: firstColor,
+                      ".MuiBottomNavigationAction-label": {
+                        fontSize: "0.55rem",
+                      },
+                      "& .MuiBottomNavigationAction-icon": {
+                        color: firstColor,
+                      },
+                    },
+                  }}
+                  icon={page.icon}
+                />
+              ))}
+            </BottomNavigation>
+          </Paper>
         </Box>
         <Box
           sx={{
@@ -75,7 +151,10 @@ export default function Navbar() {
           }}
         >
           {pages.map((page) => (
-            <Box key={page[0]} sx={{ display: "flex", alignItems: "center" }}>
+            <Box
+              key={page.label}
+              sx={{ display: "flex", alignItems: "center" }}
+            >
               <Button
                 variant="text"
                 color="inherit"
@@ -119,11 +198,11 @@ export default function Navbar() {
                   whiteSpace: "nowrap",
                 }}
               >
-                {page[0]}
+                {page.label}
               </Button>
-              {page[0] === "О нас" ? (
+              {page.label === "О нас" ? (
                 <Divider
-                  key={page[1]}
+                  key={page.color}
                   orientation="vertical"
                   sx={{
                     background: firstColor,

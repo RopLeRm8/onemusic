@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { createContext, useContext } from "react";
 import "../css/pageBack.css";
-import useGetIdPriorities from "../lib/hooks/useGetIdPriorities";
+import { useGetIdPriorities } from "../lib/hooks/useDataHandling";
 import FirstBox from "../lib/ui/components/IdPage/FirstBox";
 import SecondBox from "../lib/ui/components/IdPage/SecondBox";
 import Centered from "../lib/ui/layouts/Centered";

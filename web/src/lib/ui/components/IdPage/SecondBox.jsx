@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import arrow from "../../../../assets/ID/arrow.svg";
 import biglogo from "../../../../assets/ID/biglogo.svg";
-import useGetIdPageValues from "../../../hooks/useGetIdPageValues";
+import { useGetIdPageValues } from "../../../hooks/useDataHandling";
 export default function SecondBox() {
   const USERAGREEMENT = "";
   const POLITICSCONFID = "";

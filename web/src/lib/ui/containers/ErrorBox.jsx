@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 
-export default function Centered({ children, style }) {
+export default function ErrorBox({ children }) {
   return (
     <Box
       sx={{
@@ -8,10 +8,10 @@ export default function Centered({ children, style }) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        minHeight: "95vh",
+        height: "80vh",
       }}
     >
-      <Box sx={style}>{children}</Box>
+      <Box>{children}</Box>
     </Box>
   );
 }

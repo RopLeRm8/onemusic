@@ -1,8 +1,8 @@
 import { Box, Button, Grid, List, ListItem, Typography } from "@mui/material";
 import { useCallback } from "react";
 import redirectIcon from "../../../../assets/Landing/redirect.svg";
-import useGetGlobalValues from "../../../hooks/useGetGlobalValues";
-import useRedirect from "../../../hooks/useRedirect";
+import { useGetGlobalValues } from "../../../hooks/useDataHandling";
+import { useRedirect } from "../../../hooks/useRoutingHandlers";
 import GradientCircle from "../../customElements/GradientCircle";
 export default function LandingFirst() {
   const { firstColor, secondColor, font } = useGetGlobalValues();
@@ -14,15 +14,13 @@ export default function LandingFirst() {
     <>
       <Grid
         container
-        alignItems="center"
+        alignItems={{ xs: "start", md: "center" }}
         justifyContent="flex-start"
         direction={{ xs: "column", md: "row" }}
         sx={{
           mt: { xs: 5, md: 10 },
           mb: 5,
-          maxWidth: { md: "67.5%" },
-          flexGrow: 0,
-          flexShrink: 1,
+          maxWidth: "67.7%",
           mx: "auto",
         }}
       >
@@ -77,7 +75,7 @@ export default function LandingFirst() {
       <Box
         sx={{
           display: "flex",
-          maxWidth: "67%",
+          maxWidth: "67.2%",
           mx: "auto",
           my: 5,
         }}
@@ -106,10 +104,11 @@ export default function LandingFirst() {
       <Box
         sx={{
           display: "flex",
-          maxWidth: "69%",
+          width: { xs: "75%", sm: "71%", lg: "69%" },
+          maxWidth: "2000px",
+          minWidth: "67vw",
           mx: "auto",
           my: 5,
-          minWidth: "25%",
         }}
       >
         <List dense>
@@ -190,8 +189,7 @@ export default function LandingFirst() {
         sx={{
           display: "flex",
           justifyContent: "flex-start",
-          maxWidth: "67%",
-
+          width: "67%",
           flexGrow: 0,
           flexShrink: 1,
           mx: "auto",

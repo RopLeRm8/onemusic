@@ -1,7 +1,9 @@
 import { Button, Divider, Grid, Typography } from "@mui/material";
 
-import useGetProfilePageValues from "../../../hooks/useGetProfilePageValues";
-import useGetProfileProperties from "../../../hooks/useGetProfileProperties";
+import {
+  useGetProfilePageValues,
+  useGetProfileProperties,
+} from "../../../hooks/useDataHandling";
 
 export default function ProfileProperties() {
   const TABSBACKGROUNDCOLOR = "rgba(255, 255, 255,0.05)";
@@ -66,7 +68,7 @@ export default function ProfileProperties() {
         />
       </Grid>
       {optionsList.map((option) => (
-        <Grid item key={option.label} sx={{ ml: { md: 2 }, width: "215px" }}>
+        <Grid item key={option.label} sx={{ ml: { xs: 2 }, width: "215px" }}>
           <a
             href={option.link}
             style={{

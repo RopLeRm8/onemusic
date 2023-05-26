@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
-import useGetGlobalValues from "../../../hooks/useGetGlobalValues";
+import { useGetGlobalValues } from "../../../hooks/useDataHandling";
 export default function LandingFooter({ text }) {
   const { firstColor, font } = useGetGlobalValues();
   return (

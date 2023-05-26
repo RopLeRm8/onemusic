@@ -1,6 +1,6 @@
 import { Avatar, Box, Typography } from "@mui/material";
 import logo from "../../../../assets/Profile/biglogo.svg";
-import useGetProfilePageValues from "../../../hooks/useGetProfilePageValues";
+import { useGetProfilePageValues } from "../../../hooks/useDataHandling";
 
 export default function UpperInfo() {
   const { font, secondColor } = useGetProfilePageValues();

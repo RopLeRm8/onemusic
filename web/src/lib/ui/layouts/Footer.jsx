@@ -3,7 +3,7 @@ import tele from "../../../assets/Footer/tele.png";
 import vk from "../../../assets/Footer/vk.png";
 import yt from "../../../assets/Footer/yt.png";
 import logo from "../../../assets/Global/logo.svg";
-import useGetGlobalValues from "../../hooks/useGetGlobalValues";
+import { useGetGlobalValues } from "../../hooks/useDataHandling";
 
 export default function Footer() {
   const { secondColor, font } = useGetGlobalValues();
