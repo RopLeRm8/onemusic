@@ -1,6 +1,7 @@
 import { Box, Button, Grid, List, ListItem, Typography } from "@mui/material";
-import { useCallback } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import redirectIcon from "../../../../assets/Landing/redirect.svg";
+import "../../../../css/Landing.css";
 import { useGetGlobalValues } from "../../../hooks/useDataHandling";
 import { useRedirect } from "../../../hooks/useRoutingHandlers";
 import GradientCircle from "../../customElements/GradientCircle";
@@ -10,6 +11,46 @@ export default function LandingFirst() {
   const handleRedirectToID = useCallback(() => {
     redirect("/auth");
   }, [redirect]);
+  const typingText = useRef();
+
+  const NEWWORD = "одним свайпом";
+  const WORDSDELAY = 60;
+  const INITIALDELAY = 2000;
+  const DELAYAFTERERASE = 0;
+
+  useEffect(() => {
+    let isTyping = false;
+
+    const typingEffectElement = typingText.current;
+    const initialWord = typingEffectElement.textContent;
+    let charIndex = initialWord.length;
+
+    function type() {
+      typingEffectElement.classList.add("applyFadeReverse");
+      if (charIndex < NEWWORD.length && isTyping) {
+        typingEffectElement.textContent += NEWWORD.charAt(charIndex);
+        charIndex++;
+        setTimeout(type, WORDSDELAY);
+      }
+    }
+
+    function erase() {
+      if (charIndex >= 0 && !isTyping) {
+        typingEffectElement.textContent = initialWord.substring(0, charIndex);
+        charIndex--;
+        setTimeout(erase, WORDSDELAY);
+      } else {
+        charIndex = 0;
+        isTyping = true;
+        setTimeout(type, DELAYAFTERERASE);
+      }
+    }
+    setTimeout(() => {
+      erase();
+      typingEffectElement.classList.add("applyFade");
+    }, INITIALDELAY);
+  }, []);
+
   return (
     <>
       <Grid
@@ -94,7 +135,13 @@ export default function LandingFirst() {
           </Typography>
           <Typography
             fontFamily={font}
-            sx={{ fontSize: "200%", color: secondColor, fontWeight: 700 }}
+            sx={{
+              fontSize: "200%",
+              color: secondColor,
+              fontWeight: 700,
+              minHeight: "3.2rem",
+            }}
+            ref={typingText}
           >
             у тебя в кармане
           </Typography>

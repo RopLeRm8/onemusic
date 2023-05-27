@@ -1,17 +1,13 @@
-import { LinearProgress, Typography } from "@mui/material";
+import { LinearProgress } from "@mui/material";
 import { useGetGlobalValues } from "../../../hooks/useDataHandling";
 import Centered from "../../layouts/Centered";
 
 export default function LoadingScreen() {
-  const { font, firstColor, secondColor } = useGetGlobalValues();
+  const { firstColor } = useGetGlobalValues();
   const BACKCOLOR = "rgba(255, 255, 255, 0.2)";
   return (
-    <Centered>
-      <Typography
-        sx={{ fontFamily: font, color: secondColor, fontWeight: 600, mb: 1 }}
-      >
-        Подгружаем некоторые данные...
-      </Typography>
+    <Centered style={{ minWidth: "40%" }}>
+      Custom Loading
       <LinearProgress
         sx={{
           background: BACKCOLOR,

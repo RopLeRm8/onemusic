@@ -102,7 +102,7 @@ export function useGetProfilePageValues() {
   const secondColor = ProfilePageContextVal.secondColor;
   return { font, firstColor, secondColor };
 }
-export function useGetNavbarLinks() {
+export function useGetNavbarPages() {
   const pages = [
     {
       label: "Подписка",
@@ -126,4 +126,57 @@ export function useGetNavbarLinks() {
     },
   ];
   return pages;
+}
+export function useGetFooterLinks() {
+  const infoLinks = [
+    {
+      label: "О проекте",
+      link: "",
+    },
+    {
+      label: "Реферальная система",
+      link: "",
+    },
+    {
+      label: "Работа у нас",
+      link: "",
+    },
+    {
+      label: "Сведения о проекте",
+      link: "",
+    },
+    {
+      label: "Правовая информация",
+      link: "",
+    },
+  ];
+  const communityLinks = [
+    {
+      label: "Артисты",
+      link: "",
+    },
+    {
+      label: "Разработчики",
+      link: "",
+    },
+    {
+      label: "Инвесторы",
+      link: "",
+    },
+  ];
+  const otherLinks = [
+    {
+      label: "Поддержка",
+      link: "",
+    },
+    {
+      label: "Приложения",
+      link: "",
+    },
+    {
+      label: "Веб Плеер",
+      link: "",
+    },
+  ];
+  return { infoLinks, communityLinks, otherLinks };
 }

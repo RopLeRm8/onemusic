@@ -226,7 +226,7 @@ export default function SecondBox() {
             mt: 1,
           }}
         >
-          <a href={GIVENDATA}>
+          <a href={GIVENDATA} style={{ textDecoration: "none" }}>
             <Typography
               sx={{
                 fontFamily: font,

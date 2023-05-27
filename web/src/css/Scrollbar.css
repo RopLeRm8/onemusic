@@ -1,0 +1,19 @@
+  ::-webkit-scrollbar {
+    width: 2px; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #15E78F; 
+    border-radius: 4px; 
+    transition: background-color 0.3s ease-in-out; 
+  }
+  .fade-scrollbar-top {
+    background: linear-gradient(to top, #15E78F, white);
+  }
+
+  .fade-scrollbar-bottom {
+    background: linear-gradient(to bottom, #15E78F, white);
+  }
+  html {
+    scroll-behavior: smooth;
+  }

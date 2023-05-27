@@ -14,19 +14,30 @@ export default function PageContent() {
   }, [redirect]);
   return (
     <ErrorBox>
-      <img
-        src={x_1}
-        alt=""
-        style={{ position: "relative", left: "-6vw", top: "15rem" }}
-      />
+      <Box
+        sx={{
+          position: "relative",
+          left: { xs: "-6vw", lg: "-6rem" },
+          top: { xs: "20rem", md: "18rem" },
+        }}
+      >
+        <img
+          src={x_1}
+          alt=""
+          style={{
+            userSelect: "none",
+          }}
+        />
+      </Box>
       <img
         src={x_2}
         alt=""
         style={{
           position: "relative",
-          right: "-7.5rem",
+          right: "-11rem",
           top: "0rem",
           transform: "rotate(30deg)",
+          userSelect: "none",
         }}
       />
       <Box sx={{ display: "block", width: "15rem", textAlign: "justify" }}>

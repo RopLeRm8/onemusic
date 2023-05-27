@@ -1,0 +1,7 @@
+
+.backgroundErrorPage{
+    background-image: url("../assets/ErrorPage/back.svg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

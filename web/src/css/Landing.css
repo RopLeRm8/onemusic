@@ -1,0 +1,25 @@
+.applyFade {
+    animation: fade 3s forwards;
+  }
+  
+  .applyFadeReverse {
+    animation: fade-reverse 3s forwards;
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 100%;
+    }
+    to {
+      opacity: 0%;
+    }
+  }
+  
+  @keyframes fade-reverse {
+    from {
+      opacity: 0%;
+    }
+    to {
+      opacity: 100%;
+    }
+  }

@@ -3,60 +3,14 @@ import tele from "../../../assets/Footer/tele.png";
 import vk from "../../../assets/Footer/vk.png";
 import yt from "../../../assets/Footer/yt.png";
 import logo from "../../../assets/Global/logo.svg";
-import { useGetGlobalValues } from "../../hooks/useDataHandling";
+import {
+  useGetFooterLinks,
+  useGetGlobalValues,
+} from "../../hooks/useDataHandling";
 
 export default function Footer() {
   const { secondColor, font } = useGetGlobalValues();
-  const infoLinks = [
-    {
-      label: "О проекте",
-      link: "",
-    },
-    {
-      label: "Реферальная система",
-      link: "",
-    },
-    {
-      label: "Работа у нас",
-      link: "",
-    },
-    {
-      label: "Сведения о проекте",
-      link: "",
-    },
-    {
-      label: "Правовая информация",
-      link: "",
-    },
-  ];
-  const communityLinks = [
-    {
-      label: "Артисты",
-      link: "",
-    },
-    {
-      label: "Разработчики",
-      link: "",
-    },
-    {
-      label: "Инвесторы",
-      link: "",
-    },
-  ];
-  const otherLinks = [
-    {
-      label: "Поддержка",
-      link: "",
-    },
-    {
-      label: "Приложения",
-      link: "",
-    },
-    {
-      label: "Веб Плеер",
-      link: "",
-    },
-  ];
+  const { infoLinks, communityLinks, otherLinks } = useGetFooterLinks();
   return (
     <Grid
       container
@@ -70,7 +24,11 @@ export default function Footer() {
       }}
     >
       <Box sx={{ display: "block" }}>
-        <img src={logo} style={{ maxWidth: "80%" }} alt="" />
+        <img
+          src={logo}
+          style={{ maxWidth: "80%", userSelect: "none" }}
+          alt=""
+        />
         <Box sx={{ display: "flex", my: 2 }}>
           <IconButton
             sx={{
