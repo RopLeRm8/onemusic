@@ -3,13 +3,13 @@ import logo from "../../../../assets/ID/logo.svg";
 import { useGetIdPageValues } from "../../../hooks/useDataHandling";
 
 export default function FirstBox() {
-  const firstBoxBackground = "#0d0d0d";
+  const FIRSTBOXBACKGROUND = "#0d0d0d";
   const { font, firstColor, secondColor, priorities } = useGetIdPageValues();
-  const MOREABOUTID = "";
+  const MOREABOUT = "";
   return (
     <Box
       sx={{
-        background: firstBoxBackground,
+        background: FIRSTBOXBACKGROUND,
         px: 3,
         py: 2.5,
         pr: { md: 3, xl: 0 },
@@ -51,7 +51,7 @@ export default function FirstBox() {
           </Box>
         ))}
       </Box>
-      <a href={MOREABOUTID}>
+      <a href={MOREABOUT}>
         <Typography
           sx={{
             fontFamily: font,

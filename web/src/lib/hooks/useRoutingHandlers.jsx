@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../css/pageBack.css";
 import LoadingScreen from "../ui/components/Loading/LoadingScreen";
@@ -8,14 +8,7 @@ const IdPage = lazy(() => import("../../pages/IdPage"));
 const ProfilePage = lazy(() => import("../../pages/ProfilePage"));
 const ErrorPage = lazy(() => import("../../pages/ErrorPage"));
 
-export function useSetPageBlack() {
-  useEffect(() => {
-    document.body.classList.add("pageBack");
-    return () => {
-      document.body.classList.remove("pageBack");
-    };
-  }, []);
-}
+
 
 export function useRedirect() {
   const navigate = useNavigate();

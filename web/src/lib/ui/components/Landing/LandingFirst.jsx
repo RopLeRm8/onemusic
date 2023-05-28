@@ -1,10 +1,11 @@
 import { Box, Button, Grid, List, ListItem, Typography } from "@mui/material";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useRef } from "react";
 import redirectIcon from "../../../../assets/Landing/redirect.svg";
 import "../../../../css/Landing.css";
 import { useGetGlobalValues } from "../../../hooks/useDataHandling";
 import { useRedirect } from "../../../hooks/useRoutingHandlers";
 import GradientCircle from "../../customElements/GradientCircle";
+import { useFadeTextOnLoad } from "../../../hooks/usePageStatrup";
 export default function LandingFirst() {
   const { firstColor, secondColor, font } = useGetGlobalValues();
   const redirect = useRedirect();
@@ -12,45 +13,7 @@ export default function LandingFirst() {
     redirect("/auth");
   }, [redirect]);
   const typingText = useRef();
-
-  const NEWWORD = "одним свайпом";
-  const WORDSDELAY = 60;
-  const INITIALDELAY = 2000;
-  const DELAYAFTERERASE = 0;
-
-  useEffect(() => {
-    let isTyping = false;
-
-    const typingEffectElement = typingText.current;
-    const initialWord = typingEffectElement.textContent;
-    let charIndex = initialWord.length;
-
-    function type() {
-      typingEffectElement.classList.add("applyFadeReverse");
-      if (charIndex < NEWWORD.length && isTyping) {
-        typingEffectElement.textContent += NEWWORD.charAt(charIndex);
-        charIndex++;
-        setTimeout(type, WORDSDELAY);
-      }
-    }
-
-    function erase() {
-      if (charIndex >= 0 && !isTyping) {
-        typingEffectElement.textContent = initialWord.substring(0, charIndex);
-        charIndex--;
-        setTimeout(erase, WORDSDELAY);
-      } else {
-        charIndex = 0;
-        isTyping = true;
-        setTimeout(type, DELAYAFTERERASE);
-      }
-    }
-    setTimeout(() => {
-      erase();
-      typingEffectElement.classList.add("applyFade");
-    }, INITIALDELAY);
-  }, []);
-
+  useFadeTextOnLoad(typingText);
   return (
     <>
       <Grid

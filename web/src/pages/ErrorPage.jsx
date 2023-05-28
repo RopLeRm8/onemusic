@@ -1,12 +1,7 @@
-import { useEffect } from "react";
 import "../css/ErrorPage.css";
 import PageContent from "../lib/ui/components/ErrorPage/PageContent";
+import {useApplyErrorPageImage} from "../lib/hooks/useApplyStyles"
 export default function ErrorPage() {
-  useEffect(() => {
-    document.body.classList.add("backgroundErrorPage");
-    return () => {
-      document.body.classList.remove("backgroundErrorPage");
-    };
-  }, []);
+  useApplyErrorPageImage();
   return <PageContent />;
 }

@@ -1,7 +1,8 @@
 import { createContext } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { useLoadFonts } from "../lib/hooks/useLoadFonts";
-import { useSetPageBlack, useSetRoutes } from "../lib/hooks/useRoutingHandlers";
+import { useSetPageBlack } from "../lib/hooks/useApplyStyles";
+import {useSetRoutes} from "../lib/hooks/useRoutingHandlers"
 import Scrollbar from "../lib/ui/layouts/Scrollbar";
 export const MainContext = createContext({
   colors: ["#15E78F", "white"],
